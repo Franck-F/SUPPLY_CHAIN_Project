@@ -1,0 +1,60 @@
+digraph ERD {
+	rankdir=LR size="8,5"
+	produits [label="produits
+id_produit
+categorie
+marque
+prix
+stock_minimum" shape=box]
+	commandes [label="commandes
+id_commande
+date_commande
+id_produit
+quantite
+entrepot
+statut" shape=box]
+	stocks [label="stocks
+date
+id_produit
+entrepot
+niveau_stock" shape=box]
+	achats [label="achats
+id_achat
+date_achat
+id_produit
+quantite
+id_fournisseur
+prix_unitaire
+delai_livraison_jours" shape=box]
+	fournisseurs [label="fournisseurs
+id_fournisseur
+nom_fournisseur
+ville
+pays
+fiabilite
+delai_moyen_jours" shape=box]
+	expeditions [label="expeditions
+id_expedition
+id_commande
+id_produit
+quantite
+entrepot
+date_expedition
+date_livraison
+transporteur
+cout_transport
+delai_livraison" shape=box]
+	retours [label="retours
+id_commande
+id_produit
+date_retour
+motif" shape=box]
+	commandes -> produits
+	stocks -> produits
+	achats -> produits
+	achats -> fournisseurs
+	produits -> fournisseurs
+	retours -> produits
+	retours -> commandes
+	expeditions -> commandes
+}

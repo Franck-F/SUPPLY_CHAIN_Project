@@ -1,0 +1,17 @@
+# Datasets
+SUPPLY_CHAIN/dataset/
+
+# Fichiers spécifiques
+*.log
+config.local
+.venv
+# Dossiers de dépendances (exemples Python/Node)
+ __pycache__/
+*.pyc
+venv/
+node_modules/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
